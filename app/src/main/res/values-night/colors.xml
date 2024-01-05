@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text">@color/white</color>
+    <color name="recycler_background">#111111</color>
+    <color name="app_background">@color/black</color>
+    <color name="fab_background">#616161</color>
+    <color name="fab_content">@color/white</color>
+</resources>

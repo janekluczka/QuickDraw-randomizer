@@ -1,0 +1,72 @@
+<resources>
+    <style name="Theme.LotteryMachine" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/grey_900</item>
+        <item name="colorPrimaryVariant">@color/grey_900_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/grey_200</item>
+        <item name="colorSecondaryVariant">@color/grey_300</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="android:statusBarColor">@color/app_background</item>
+        <item name="android:navigationBarColor">@color/app_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="CustomToolbar" parent="Theme.MaterialComponents">
+        <item name="android:fontFamily">@font/work_sans_bold</item>
+        <item name="navigationIconTint">@color/black</item>
+    </style>
+
+    <style name="CustomMaterialToolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Surface">
+        <item name="android:fontFamily">@font/work_sans_bold</item>
+        <item name="navigationIconTint">@color/black</item>
+    </style>
+
+    <style name="recyclerStyle">
+        <item name="background">@color/recycler_background</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton.IconOnlyAdd" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="DialogWithTitleTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+    </style>
+
+    <style name="DialogWithTitleAndBodyTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleBoldTextStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/DialogBodyTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+    </style>
+
+    <style name="DialogTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:fontFamily">@font/work_sans</item>
+    </style>
+
+    <style name="DialogTitleBoldTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:fontFamily">@font/work_sans_bold</item>
+    </style>
+
+    <style name="DialogBodyTextStyle">
+        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="fontFamily">@font/work_sans_bold</item>
+    </style>
+
+    <style name="DrawFloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="fontFamily">@font/work_sans</item>
+    </style>
+</resources>

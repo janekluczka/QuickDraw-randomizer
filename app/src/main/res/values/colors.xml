@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text">@color/grey_900</color>
+    <color name="recycler_background">@color/grey_100</color>
+    <color name="app_background">@color/white</color>
+    <color name="fab_background">@color/black</color>
+    <color name="fab_content">@color/white</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900_light">#484848</color>
+    <color name="grey_900">#212121</color>
+    <color name="grey_900_dark">#000000</color>
+</resources>

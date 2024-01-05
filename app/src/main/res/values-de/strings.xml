@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickDraw</string>
+    <string name="item_hint">Element eingeben</string>
+    <string name="draw_button_description">Ziehen</string>
+    <string name="add_button_description">Hinzufügen</string>
+    <string name="exit_dialog_title">App beenden?</string>
+    <string name="exit_dialog_stay">Bleiben</string>
+    <string name="exit_dialog_exit">Beenden</string>
+    <string name="no_items_dialog_title">Keine Elemente zum Zeichnen</string>
+    <string name="no_items_dialog_message">Sie müssen Elemente hinzufügen, um sie zu zeichnen!</string>
+    <string name="seriously">Ernsthaft?</string>
+</resources>

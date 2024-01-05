@@ -1,0 +1,23 @@
+<resources>
+    <style name="Theme.LotteryMachine" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/grey_900</item>
+        <item name="colorSecondary">@color/grey_900</item>
+        <item name="colorSecondaryVariant">@color/grey_900_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="android:statusBarColor">@color/app_background</item>
+        <item name="android:navigationBarColor">@color/app_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="CustomToolbar" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:fontFamily">@font/work_sans_bold</item>
+    </style>
+
+    <style name="recyclerStyle">
+        <item name="background">@color/grey_900</item>
+    </style>
+
+</resources>
