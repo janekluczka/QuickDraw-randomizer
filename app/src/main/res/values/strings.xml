@@ -6,7 +6,5 @@
     <string name="exit_dialog_title">Exit app?</string>
     <string name="exit_dialog_stay">Stay</string>
     <string name="exit_dialog_exit">Exit</string>
-    <string name="no_items_dialog_title">No items to draw</string>
-    <string name="no_items_dialog_message">You need to add items to draw them!</string>
     <string name="seriously">Seriously?</string>
 </resources>

@@ -11,8 +11,8 @@ android {
         applicationId "com.luczka.lotterymachine"
         minSdk 26
         targetSdk 34
-        versionCode 6
-        versionName "1.2"
+        versionCode 8
+        versionName "1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -45,8 +45,6 @@
         android:textStyle="bold"
         android:visibility="gone"
         app:backgroundTint="@color/fab_background"
-        app:icon="@drawable/ic_shuffle_random_24"
-        app:iconTint="@color/fab_content"
         app:layout_constraintBottom_toTopOf="@+id/fragment_lottery_material_divider_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

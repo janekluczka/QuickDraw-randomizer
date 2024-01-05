@@ -7,7 +7,5 @@
     <string name="exit_dialog_title">Wyjść z aplikacji?</string>
     <string name="exit_dialog_stay">Zostań</string>
     <string name="exit_dialog_exit">Wyjdź</string>
-    <string name="no_items_dialog_title">Brak elementów do losowania</string>
-    <string name="no_items_dialog_message">Najpierw dodaj elementy, żeby móc je wylosować</string>
     <string name="seriously">Serio?</string>
 </resources>

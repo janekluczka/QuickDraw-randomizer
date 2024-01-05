@@ -7,7 +7,5 @@
     <string name="exit_dialog_title">App beenden?</string>
     <string name="exit_dialog_stay">Bleiben</string>
     <string name="exit_dialog_exit">Beenden</string>
-    <string name="no_items_dialog_title">Keine Elemente zum Zeichnen</string>
-    <string name="no_items_dialog_message">Sie müssen Elemente hinzufügen, um sie zu zeichnen!</string>
     <string name="seriously">Ernsthaft?</string>
 </resources>
