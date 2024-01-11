@@ -14,8 +14,6 @@ class LotteryViewModel : ViewModel() {
 
     private val items = ArrayList<Item>()
 
-    var isShowingExitDialog = false
-
     private val _itemsLiveData = MutableLiveData<ArrayList<Item>>()
     val itemsLiveData: LiveData<ArrayList<Item>> = _itemsLiveData
 
@@ -41,6 +39,6 @@ class LotteryViewModel : ViewModel() {
         }
     }
 
-    fun itemListIsNotEmpty(): Boolean = _itemsLiveData.value?.isNotEmpty() ?: false
+    fun itemListIsEmpty(): Boolean = _itemsLiveData.value?.isEmpty() ?: true
 
 }

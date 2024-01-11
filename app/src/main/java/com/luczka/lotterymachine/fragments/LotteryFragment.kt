@@ -24,14 +24,19 @@ import com.luczka.lotterymachine.viewmodels.LotteryViewModel
 
 class LotteryFragment : Fragment() {
 
-    private lateinit var exitDialog: MaterialAlertDialogBuilder
-
     private val viewModel: LotteryViewModel by viewModels()
 
     private lateinit var itemRecyclerView: RecyclerView
     private lateinit var textInputText: TextInputEditText
     private lateinit var addButton: MaterialButton
     private lateinit var drawExtendedFloatingActionButton: ExtendedFloatingActionButton
+
+    private val exitDialog: MaterialAlertDialogBuilder by lazy {
+        MaterialAlertDialogBuilder(requireContext(), R.style.DialogWithTitleTheme)
+            .setTitle(resources.getString(R.string.exit_dialog_title))
+            .setNegativeButton(resources.getString(R.string.exit_dialog_stay)) { _, _ -> }
+            .setPositiveButton(resources.getString(R.string.exit_dialog_exit)) { _, _ -> requireActivity().finish() }
+    }
 
     private val itemTouchHelper = ItemTouchHelper(
         object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
@@ -55,29 +60,12 @@ class LotteryFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val exitDialogTheme = R.style.DialogWithTitleTheme
-
-        exitDialog = MaterialAlertDialogBuilder(requireContext(), exitDialogTheme)
-            .setTitle(resources.getString(R.string.exit_dialog_title))
-            .setNegativeButton(resources.getString(R.string.exit_dialog_stay)) { _, _ ->
-                viewModel.isShowingExitDialog = false
-            }
-            .setPositiveButton(resources.getString(R.string.exit_dialog_exit)) { _, _ ->
-                requireActivity().finish()
-            }
-
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            showExitDialogOrFinish()
-        }
-    }
-
-    private fun showExitDialogOrFinish() {
-        if (viewModel.itemListIsNotEmpty()) {
-            requireActivity().finish()
-        } else {
-            viewModel.isShowingExitDialog = true
-            exitDialog.show()
+            if (viewModel.itemListIsEmpty()) {
+                requireActivity().finish()
+            } else {
+                exitDialog.show()
+            }
         }
     }
 
@@ -111,10 +99,6 @@ class LotteryFragment : Fragment() {
         drawExtendedFloatingActionButton.setOnClickListener {
             drawItemAndNavigate()
         }
-
-        if (viewModel.isShowingExitDialog) {
-            exitDialog.show()
-        }
     }
 
     private fun View.fadeVisibility(visibility: Int, duration: Long = 500) {
@@ -134,7 +118,7 @@ class LotteryFragment : Fragment() {
     }
 
     private fun drawItemAndNavigate() {
-        if (viewModel.itemListIsNotEmpty()) {
+        if (viewModel.itemListIsEmpty()) {
             viewModel.drawItem(context = requireContext())?.let { item ->
                 val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(item)
                 findNavController().navigate(action)
