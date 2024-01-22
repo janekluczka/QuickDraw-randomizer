@@ -118,11 +118,9 @@ class LotteryFragment : Fragment() {
     }
 
     private fun drawItemAndNavigate() {
-        if (viewModel.itemListIsEmpty()) {
-            viewModel.drawItem(context = requireContext())?.let { item ->
-                val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(item)
-                findNavController().navigate(action)
-            }
+        viewModel.drawItem(context = requireContext())?.let { item ->
+            val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(item)
+            findNavController().navigate(action)
         }
     }
 
