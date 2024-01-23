@@ -110,18 +110,31 @@ class LotteryFragment : Fragment() {
     }
 
     private fun addNewItem() {
-        val text = textInputText.text.toString()
-        if (text.isNotBlank()) {
-            textInputText.text?.clear()
-            viewModel.addItem(text)
+        textInputText.text?.let { text ->
+            if (text.isNotBlank()) {
+                viewModel.addItem(text.toString())
+                text.clear()
+            }
         }
     }
 
     private fun drawItemAndNavigate() {
-        viewModel.drawItem(context = requireContext())?.let { item ->
-            val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(item)
-            findNavController().navigate(action)
-        }
+        viewModel.drawItem(
+            onNoItems = {
+
+            },
+            onOneItem = {
+                navigateToResult(item = requireContext().getString(R.string.seriously))
+            },
+            onMultipleItems = { item ->
+                navigateToResult(item = item)
+            }
+        )
+    }
+
+    private fun navigateToResult(item: String) {
+        val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(item)
+        findNavController().navigate(action)
     }
 
 }

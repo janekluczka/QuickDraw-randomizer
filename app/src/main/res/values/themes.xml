@@ -42,24 +42,8 @@
         <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
     </style>
 
-    <style name="DialogWithTitleAndBodyTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleBoldTextStyle</item>
-        <item name="materialAlertDialogBodyTextStyle">@style/DialogBodyTextStyle</item>
-        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
-        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
-    </style>
-
     <style name="DialogTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:fontFamily">@font/work_sans</item>
-    </style>
-
-    <style name="DialogTitleBoldTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-    </style>
-
-    <style name="DialogBodyTextStyle">
-        <item name="android:fontFamily">@font/work_sans</item>
-        <item name="android:gravity">left</item>
     </style>
 
     <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
