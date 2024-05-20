@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Lottery Machine</string>
     <string name="item_hint">Enter item</string>
-    <string name="draw_button_description">Draw</string>
     <string name="add_button_description">Add</string>
     <string name="dialog_exit_title">Exit app?</string>
+    <string name="action_draw">Draw</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_exit">Exit</string>
-    <string name="seriously">Seriously?</string>
+    <string name="action_undo">Undo</string>
+    <string name="snackbar_removed_title">Item removed</string>
+    <string name="item_seriously">Seriously?</string>
+    <string name="select_theme">Select theme</string>
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="system_theme">Use system settings</string>
+    <string name="more">More</string>
 </resources>

@@ -2,10 +2,17 @@
 <resources>
     <string name="app_name">Maszyna losująca</string>
     <string name="item_hint">Wprowadź element</string>
-    <string name="draw_button_description">Losuj</string>
+    <string name="action_draw">Losuj</string>
     <string name="add_button_description">Dodaj</string>
     <string name="dialog_exit_title">Wyjść z aplikacji?</string>
     <string name="action_cancel">Anuluj</string>
     <string name="action_exit">Wyjdź</string>
-    <string name="seriously">Serio?</string>
+    <string name="item_seriously">Serio?</string>
+    <string name="action_undo">Cofnij</string>
+    <string name="snackbar_removed_title">Element usunięty</string>
+    <string name="select_theme">Wybierz motyw</string>
+    <string name="light_theme">Jasny</string>
+    <string name="dark_theme">Ciemny</string>
+    <string name="system_theme">Użyj ustawienia systemu</string>
+    <string name="more">Więcej</string>
 </resources>

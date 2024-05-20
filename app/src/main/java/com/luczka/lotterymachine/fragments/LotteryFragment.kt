@@ -1,5 +1,8 @@
 package com.luczka.lotterymachine.fragments
 
+import android.app.UiModeManager
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.transition.Fade
 import android.transition.Transition
@@ -7,7 +10,9 @@ import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,6 +20,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -109,6 +115,18 @@ class LotteryFragment : Fragment() {
         toolbar.isTitleCentered = true
         toolbar.title = getString(R.string.app_name)
 
+        toolbar.inflateMenu(R.menu.lottery_fragment_menu)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_item_select_theme -> {
+                    openThemeSelectorBottomSheet()
+                    true
+                }
+
+                else -> false
+            }
+        }
+
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
         recyclerView.apply {
@@ -129,8 +147,13 @@ class LotteryFragment : Fragment() {
 
         viewModel.removedItem.observe(viewLifecycleOwner) { removedItem ->
             if (removedItem != null) {
-               Snackbar.make(view, "Item removed", Snackbar.LENGTH_LONG)
-                    .setAction("Undo") {
+                Snackbar
+                    .make(
+                        view,
+                        getString(R.string.snackbar_removed_title),
+                        Snackbar.LENGTH_LONG
+                    )
+                    .setAction(getString(R.string.action_undo)) {
                         viewModel.undoRemoveItem(removedItem)
                     }
                     .setAnchorView(R.id.fragment_lottery_divider_bottom)
@@ -144,6 +167,13 @@ class LotteryFragment : Fragment() {
 
         drawExtendedFloatingActionButton.setOnClickListener {
             onDrawItem()
+        }
+    }
+
+    private fun openThemeSelectorBottomSheet() {
+        activity?.supportFragmentManager?.let { supportFragmentManager ->
+            val themeModalBottomSheet = ThemeModalBottomSheet()
+            themeModalBottomSheet.show(supportFragmentManager, ThemeModalBottomSheet.TAG)
         }
     }
 
@@ -169,9 +199,11 @@ class LotteryFragment : Fragment() {
 
     private fun onDrawItem() {
         viewModel.drawItem(
-            onNoItems = {},
+            onNoItems = {
+
+            },
             onOneItem = {
-                navigateToResult(drawnValue = getString(R.string.seriously))
+                navigateToResult(drawnValue = getString(R.string.item_seriously))
             },
             onMultipleItems = { drawnValue ->
                 navigateToResult(drawnValue = drawnValue)
@@ -183,4 +215,60 @@ class LotteryFragment : Fragment() {
         val action = LotteryFragmentDirections.actionLotteryFragmentToResultFragment(drawnValue)
         findNavController().navigate(action)
     }
+
+}
+
+class ThemeModalBottomSheet : BottomSheetDialogFragment() {
+
+    companion object {
+        const val TAG = "ThemeModalBottomSheet"
+    }
+
+    private lateinit var radioGroup: RadioGroup
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.modal_bottom_sheet_content, container, false)
+
+        radioGroup = view.findViewById(R.id.modal_bottom_sheet_content_radio_light)
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val uiModeManager =
+            requireContext().getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
+
+        val currentMode = resources.configuration.uiMode
+
+        when (currentMode) {
+            UiModeManager.MODE_NIGHT_NO -> radioGroup.check(R.id.modal_bottom_sheet_content_radio_light)
+            UiModeManager.MODE_NIGHT_YES -> radioGroup.check(R.id.modal_bottom_sheet_content_radio_dark)
+            else -> radioGroup.check(R.id.modal_bottom_sheet_content_radio_system)
+        }
+
+        radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            val mode = when (checkedId) {
+                R.id.modal_bottom_sheet_content_radio_light -> UiModeManager.MODE_NIGHT_NO
+                R.id.modal_bottom_sheet_content_radio_dark -> UiModeManager.MODE_NIGHT_YES
+                R.id.modal_bottom_sheet_content_radio_system -> UiModeManager.MODE_NIGHT_AUTO
+
+                else -> {
+                    return@setOnCheckedChangeListener
+                }
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                uiModeManager.setApplicationNightMode(mode)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(mode)
+            }
+        }
+    }
+
 }

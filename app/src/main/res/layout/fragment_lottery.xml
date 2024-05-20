@@ -56,7 +56,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:gravity="center"
-        android:text="@string/draw_button_description"
+        android:text="@string/action_draw"
         android:textColor="@color/fab_content"
         android:textSize="16sp"
         android:textStyle="bold"
