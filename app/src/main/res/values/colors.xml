@@ -2,7 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="text">@color/grey_900</color>
+    <color name="onSurfaceHighEmphasis">#212121</color>
+    <color name="onSurfaceMediumEmphasis">#666666</color>
+    <color name="onSurfaceDisabled">#9E9E9E</color>
+    <color name="outline">#E0E0E0</color>
+    <color name="surfaceOverlay">#EEEEEE</color>
     <color name="recycler_background">@color/grey_100</color>
     <color name="app_background">@color/white</color>
     <color name="fab_background">@color/black</color>

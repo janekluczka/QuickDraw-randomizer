@@ -9,20 +9,76 @@
         <item name="android:colorBackground">@color/app_background</item>
         <item name="android:statusBarColor">@color/app_background</item>
         <item name="android:navigationBarColor">@color/app_background</item>
+        <item name="textAppearanceHeadline1">@style/CustomHeadline1</item>
+        <item name="textAppearanceHeadline2">@style/CustomHeadline2</item>
+        <item name="textAppearanceHeadline3">@style/CustomHeadline3</item>
+        <item name="textAppearanceHeadline4">@style/CustomHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/CustomHeadline5</item>
+        <item name="textAppearanceHeadline6">@style/CustomHeadline6</item>
+        <item name="textAppearanceSubtitle1">@style/CustomSubtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/CustomSubtitle2</item>
+        <item name="textAppearanceBody1">@style/CustomBody1</item>
+        <item name="textAppearanceBody2">@style/CustomBody2</item>
+        <item name="textAppearanceButton">@style/CustomButton</item>
+        <item name="textAppearanceCaption">@style/CustomCaption</item>
+        <item name="textAppearanceOverline">@style/CustomOverline</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="CustomToolbar" parent="Theme.MaterialComponents">
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="navigationIconTint">@color/black</item>
+    <style name="CustomHeadline1" parent="@style/TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/inter_light</item>
     </style>
 
-    <style name="CustomMaterialToolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Surface">
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="navigationIconTint">@color/black</item>
+    <style name="CustomHeadline2" parent="@style/TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/inter_light</item>
     </style>
 
-    <style name="recyclerStyle">
+    <style name="CustomHeadline3" parent="@style/TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomHeadline4" parent="@style/TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomHeadline5" parent="@style/TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomHeadline6" parent="@style/TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="CustomSubtitle1" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomSubtitle2" parent="@style/TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="CustomBody1" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomBody2" parent="@style/TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomButton" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="CustomCaption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="CustomOverline" parent="@style/TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="RecyclerStyle">
         <item name="background">@color/recycler_background</item>
     </style>
 
@@ -43,14 +99,14 @@
     </style>
 
     <style name="DialogTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
-        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
     </style>
 
     <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="fontFamily">@font/work_sans_bold</item>
+        <item name="fontFamily">@font/inter_medium</item>
     </style>
 
     <style name="DrawFloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
-        <item name="fontFamily">@font/work_sans</item>
+        <item name="fontFamily">@font/inter_medium</item>
     </style>
 </resources>

@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">QuickDraw</string>
+    <string name="app_name">Lottery Machine</string>
     <string name="item_hint">Enter item</string>
     <string name="draw_button_description">Draw</string>
     <string name="add_button_description">Add</string>
-    <string name="exit_dialog_title">Exit app?</string>
-    <string name="exit_dialog_stay">Stay</string>
-    <string name="exit_dialog_exit">Exit</string>
+    <string name="dialog_exit_title">Exit app?</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_exit">Exit</string>
     <string name="seriously">Seriously?</string>
 </resources>

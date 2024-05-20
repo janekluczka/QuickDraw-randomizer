@@ -18,20 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById<MaterialToolbar>(R.id.activity_main_toolbar)
-        setSupportActionBar(toolbar)
-
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.activity_main_nav_host_fragment) as NavHostFragment
 
         navController = navHostFragment.navController
-
-        val appBarConfiguration = AppBarConfiguration(navGraph = navController.graph)
-        toolbar.setupWithNavController(
-            navController = navController,
-            configuration = appBarConfiguration
-        )
-        toolbar.setNavigationIconTint(ContextCompat.getColor(this, R.color.text))
     }
 
 }

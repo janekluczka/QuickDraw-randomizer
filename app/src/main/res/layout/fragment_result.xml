@@ -4,24 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-<!--    android:background="@color/app_background">-->
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fragment_result_abl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/fragment_result_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_background"
+            android:elevation="0dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-        android:id="@+id/fragment_result_tv_result"
+        android:id="@+id/fragment_result_txt_result"
+        style="@style/CustomHeadline4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/work_sans_bold"
+        android:layout_margin="16dp"
         android:textAlignment="center"
-        android:textColor="@color/text"
-        android:textSize="48sp"
+        android:textColor="@color/onSurfaceHighEmphasis"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_abl"
         tools:text="Result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

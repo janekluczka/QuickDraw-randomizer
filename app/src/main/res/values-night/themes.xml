@@ -12,11 +12,7 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <style name="CustomToolbar" parent="Theme.MaterialComponents.DayNight">
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-    </style>
-
-    <style name="recyclerStyle">
+    <style name="RecyclerStyle">
         <item name="background">@color/grey_900</item>
     </style>
 
