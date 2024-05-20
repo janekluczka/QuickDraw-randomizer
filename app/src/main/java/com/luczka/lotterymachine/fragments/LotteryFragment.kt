@@ -233,7 +233,7 @@ class ThemeModalBottomSheet : BottomSheetDialogFragment() {
     ): View? {
         val view = inflater.inflate(R.layout.modal_bottom_sheet_content, container, false)
 
-        radioGroup = view.findViewById(R.id.modal_bottom_sheet_content_radio_light)
+        radioGroup = view.findViewById(R.id.modal_bottom_sheet_content_radio_group)
 
         return view
     }
